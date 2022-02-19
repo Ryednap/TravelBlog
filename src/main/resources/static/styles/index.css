@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+/*noinspection CssUnknownTarget*/
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+/*noinspection CssUnknownTarget*/
+@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap');
+/*noinspection CssUnknownTarget*/
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai&display=swap');
+body {
+   /* background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% ); */
+  /*  background-image: linear-gradient(to right, #ff9966, #ff5e62);*/
+    background-image: linear-gradient(to right, #ff6e7f, #bfe9ff);
+}
+
+
+/** Bootstrap Modal Styling**/
+
+.modal-content {
+    background-color: rgb(255, 254, 210);
+    border-radius: 20px;
+}
+
+.form-field {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff
+}
+
+.form-field input {
+    width: 100%;
+    display: block;
+    border: #666;
+    outline: #cbced1;
+    background: none;
+    font-size: 1.2rem;
+    color: #ff0000;
+    padding: 10px 15px 10px 10px;
+}
+
+.form-field input::placeholder {
+    color: #ea00ff;
+}
+
+.modal-body .btn {
+    margin-left: 30px;
+    margin-bottom: 20px;
+    width: 80%;
+    background: #5E5DF0;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    border: 0;
+}
+
+.modal-body .btn:hover {
+    background-color: #039BE5
+}
+
+
+/**  Main Body Styling */
+
+.d-inline-flex {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.d-inline-flex .btn {
+    display: table-cell;
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+}
+
+.card-img-left {
+    width: 45%;
+    /* Link to your background image using in the property below! */
+    background: scroll center url('/assets/bcg.jpg');
+    background-size: cover;
+}
+
+.btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+}
+
+.btn-google {
+    color: white !important;
+    background-color: #ea4335;
+}
+
+.btn-facebook {
+    color: white !important;
+    background-color: #3b5998;
+}
+
+i {
+    padding: 5px;
+    margin: 2px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-family: 'Lobster', cursive;
+    font-size: 16px;
+    letter-spacing: 0.1rem;
+}
+
+
+form .btn{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    align-items: center;
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    transition: box-shadow .15s,transform .15s;
+    font-size: 18px;
+}
+
+form .btn[type=submit] {
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+}
+
+form .btn[type=reset] {
+    background-image: radial-gradient(100% 100% at 100% 0, #f56680 0, #ff5454 100%);
+}
+
+form .btn:focus {
+    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+form .btn:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+form .btn:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.d-grid .btn {
+    background-color: #c2fbd7;
+    height: 50px;
+    border-radius: 100px;
+    box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+    color: green;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    font-weight: 700;
+    padding: 7px 20px;
+    text-align: center;
+    transition: all 250ms;
+    border: 0;
+    font-size: 20px;
+}
+
+.d-grid .btn:hover {
+    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+}
+
+textarea {
+    font-family: 'Akaya Telivigala', cursive;
+}
+
+input[type=text], #date{
+    color: #310b34;
+    font-family: 'Arima Madurai', cursive;
+    font-weight: 800
+}
+
+input[type=file] {
+    font-family: 'Courgette', cursive;
+}
+
+h5 {
+    font-family: 'Gideon Roman', cursive;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    color: #d2432a;
+    text-shadow: 5px 5px 8px #dfa157;
+}

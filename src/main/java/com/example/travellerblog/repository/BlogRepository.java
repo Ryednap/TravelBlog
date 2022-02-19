@@ -1,0 +1,7 @@
+package com.example.travellerblog.repository;
+
+import com.example.travellerblog.model.Blog;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BlogRepository extends JpaRepository<Blog, String> {
+}
