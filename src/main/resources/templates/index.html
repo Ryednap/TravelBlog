@@ -65,7 +65,7 @@
                     <div class="card-body p-4 p-sm-5">
                         <h5 class="card-title text-center mb-5">Travel Blog</h5>
                         <!-- Blog Form -->
-                        <form th:action="@{/blog/form}" th:object="blog" method="post">
+                        <form th:action="@{/blog/form}" th:object="${blog}" method="post">
                             <div class="form-floating mb-3">
                                 <input th:value="${blog.name}" type="text" class="form-control" id="name" placeholder="Name" required autofocus>
                                 <label for="name"><i class="fa fa-user"></i>Name</label>
