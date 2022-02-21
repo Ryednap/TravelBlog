@@ -13,14 +13,14 @@ body {
 }
 
 
-/** Bootstrap Modal Styling**/
+/** .............................. Bootstrap Prompt Modal Styling .................................**/
 
-.modal-content {
+#promptModal .modal-content {
     background-color: rgb(255, 254, 210);
     border-radius: 20px;
 }
 
-.form-field {
+#promptModal .form-field {
     display: flex;
     align-items: center;
     padding-left: 10px;
@@ -29,7 +29,7 @@ body {
     box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff
 }
 
-.form-field input {
+#promptModal .form-field input {
     width: 100%;
     display: block;
     border: #666;
@@ -40,11 +40,11 @@ body {
     padding: 10px 15px 10px 10px;
 }
 
-.form-field input::placeholder {
+#promptModal .form-field input::placeholder {
     color: #ea00ff;
 }
 
-.modal-body .btn {
+#promptModal .modal-body .btn {
     margin-left: 30px;
     margin-bottom: 20px;
     width: 80%;
@@ -63,12 +63,12 @@ body {
     border: 0;
 }
 
-.modal-body .btn:hover {
+#promptModal .modal-body .btn:hover {
     background-color: #039BE5
 }
 
 
-/**  Main Body Styling */
+/**  .................... Main Body Styling .............................*/
 
 .d-inline-flex {
     display: table;

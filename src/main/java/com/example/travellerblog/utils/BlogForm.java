@@ -1,44 +1,47 @@
 package com.example.travellerblog.utils;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.data.util.Pair;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class BlogForm {
-    private final String name;
-    private final String description;
-    private final LocalDate date;
-    private final MultipartFile coverImage;
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+    private String name;
+    private String description;
+    private LocalDate date;
+    private String dateString;
+    private MultipartFile coverImage;
 
-    public BlogForm(String name, String description, LocalDate date, MultipartFile coverImage) {
+    public BlogForm(String name, String description, String dateString, MultipartFile coverImage) {
         this.name = name;
         this.description = description;
-        this.date = date;
+        this.date = LocalDate.parse(dateString, formatter);
+        this.dateString = dateString;
         this.coverImage = coverImage;
     }
+
     public BlogForm() {
         this.name = "";
         this.description = "";
+        this.dateString = "";
         this.date = null;
         this.coverImage = null;
     }
 
-    public Pair<Boolean, String> validateForm () {
-        if (this.date == null) return Pair.of(false, "Date Field is empty");
-        if (this.coverImage == null) return Pair.of(false, "Cover Image not supplied");
-        if(this.name.length() > 100) return Pair.of(false, "Name Length exceeds 100 character limit");
-        if (this.date.isAfter(LocalDate.now())) return Pair.of(false, "Date exceeds the Current Date");
-        if (FilenameUtils.isExtension(this.coverImage.getOriginalFilename(),
-                "jpeg", "jpg", "png")) return Pair.of(false, "Cover Image doesn't match following types : JPEG/JPG/PNG");
+    public Pair<Integer, String> validateForm () {
+        if (this.date == null) return Pair.of(1, "Date Field is empty");
+        if (this.coverImage == null) return Pair.of(1, "Cover Image not supplied");
+        if(this.name.length() > 100) return Pair.of(1, "Name Length exceeds 100 character limit");
+        if (this.date.isAfter(LocalDate.now())) return Pair.of(1, "Date exceeds the Current Date");
+        if (!FilenameUtils.isExtension(this.coverImage.getOriginalFilename(),
+                "jpeg", "jpg", "png")) return Pair.of(1, "Cover Image doesn't match following types : JPEG/JPG/PNG");
         System.out.println("Size of the uploaded File: " + this.coverImage.getSize() * (9.5 * 1e-7));
-        if (this.coverImage.getSize() * (9.5 * 1e-7) > 5.00) return Pair.of(false, "Cover Image size exceeds 5Mb limit");
-        return Pair.of(true, "Registration Successful");
+        if (this.coverImage.getSize() * (9.5 * 1e-7) > 5.00) return Pair.of(1, "Cover Image size exceeds 5Mb limit");
+        return Pair.of(2, "Your Blog has been submitted. Press on View Blogs to view");
     }
 
     public String getName() {
@@ -55,6 +58,31 @@ public class BlogForm {
 
     public MultipartFile getCoverImage() {
         return coverImage;
+    }
+
+    public String getDateString() {
+        return dateString;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setDateString(String dateString) {
+        this.dateString = dateString;
+        setDate(LocalDate.parse(dateString, formatter));
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public void setCoverImage(MultipartFile coverImage) {
+        this.coverImage = coverImage;
     }
 
     @Override

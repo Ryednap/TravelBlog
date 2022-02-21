@@ -65,25 +65,25 @@
                     <div class="card-body p-4 p-sm-5">
                         <h5 class="card-title text-center mb-5">Travel Blog</h5>
                         <!-- Blog Form -->
-                        <form th:action="@{/blog/form}" th:object="${blog}" method="post">
+                        <form th:action="@{/blog/form}" th:object="${blog}" method="post" enctype="multipart/form-data">
                             <div class="form-floating mb-3">
-                                <input th:value="${blog.name}" type="text" class="form-control" id="name" placeholder="Name" required autofocus>
+                                <input th:field="*{name}" type="text" class="form-control" id="name" placeholder="Name" required autofocus />
                                 <label for="name"><i class="fa fa-user"></i>Name</label>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input th:value="${blog.date}" data-provide="datepicker" class="form-control" id="date" placeholder="Date">
+                                <input th:field="*{dateString}" data-provide="datepicker" class="form-control" id="date" placeholder="Date" />
                                 <label for="date"><i class="fas fa-calendar"></i>Date</label>
                             </div>
 
                             <div class="form-text mb-3">
                                 <label for="desc" class="form-label"><i class="fas fa-comment-alt"></i>Description</label>
-                                <textarea th:value="${blog.description}" rows="5" class="form-control" id="desc" placeholder="Description"> </textarea>
+                                <textarea th:field="*{description}" rows="5" class="form-control" id="desc" placeholder="Description"> </textarea>
                             </div>
 
                             <div class="form-file mb-3">
                                 <label for="cover_image"><i class="fas fa-file-image"></i>Cover Image</label>
-                                <input th:value="${blog.coverImage}" type="file" class="form-control" id="cover_image" placeholder="Cover Image">
+                                <input th:field="*{coverImage}" type="file" class="form-control" id="cover_image" placeholder="Cover Image" />
 
                             </div>
 
@@ -102,5 +102,24 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        const status = /*[[${status}]]*/ 0;
+        const message = /*[[${message}]]*/ 'default';
+
+        if (status !== 0) {
+            $(window).on('load', function() {
+                console.log("displaying modal");
+                Swal.fire({
+                    icon: status === 1 ? 'error' : 'success',
+                    title: status === 1 ? 'Submission Failed' : 'Successfully Created',
+                    text: message,
+                })
+            });
+        }
+        /*]]>*/
+    </script>
 </body>
 </html>
