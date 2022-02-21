@@ -1,0 +1,93 @@
+.col-md-6 {
+  margin-top: 20px;
+}
+
+.card-custom {
+  overflow: hidden;
+  min-height: 450px;
+  box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+}
+
+.card-body {
+  background-color: #9696c5;
+}
+
+.card-custom-img {
+  height: 410px;
+  min-height: 410px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-color: inherit;
+  opacity: 0.8;
+}
+
+/* First border-left-width setting is a fallback */
+.card-custom-img::after {
+  position: absolute;
+  content: '';
+  top: 370px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-top-width: 40px;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: calc(575px - 5vw);
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: #9696c5;
+  border-left-color: #9696c5;
+}
+
+
+span {
+  margin: 6px;
+  width: 100px;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.card-text {
+  color: white;
+  font-weight: bold;
+  font-family: cursive;
+  text-align: center;
+}
+
+i {
+  text-align: center;
+  font-size: 18px;
+  color: purple;
+}
+
+.btn {
+  align-items: center;
+  padding-left: 1px;
+  padding-bottom: 1px;
+  padding-right: 1px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  display: inline-block;
+  top: 5px;
+  right: 0;
+  position: absolute;
+}
+
+.view {
+  background-color: greenyellow;
+  right: 75px;
+}
+
+.edit {
+  background-color: deepskyblue;
+  right: 40px;
+}
+
+.delete {
+  right: 5px;
+  background-color: orangered;
+}
