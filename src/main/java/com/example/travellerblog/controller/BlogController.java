@@ -42,6 +42,16 @@ public class BlogController {
         return new ModelAndView("blogList");
     }
 
+    @GetMapping(value = "/blogItem")
+    public ModelAndView getBlogItem() {
+        return new ModelAndView("blogItem");
+    }
+
+    @GetMapping(value="/blog/blogEdit")
+    public ModelAndView getBlogEditPage () {
+        return new ModelAndView("blogItemEdit");
+    }
+
     @DeleteMapping(value = "/blogItem")
     public ModelAndView deleteBlogItem() {
         return new ModelAndView("redirect:/blogList");

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+body {
+    background-color: hsl(0, 17%, 86%);
+    background-image: linear-gradient(-45deg, hsla(0,0%,0%,0), hsla(0,0%,0%,.05) );
+}
+
+.col-md-12 {
+    margin-top: 20px;
+}
+
+.card-custom {
+    overflow: hidden;
+    min-height: 600px;
+    box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+}
+
+.card-body {
+    background-color: #c596c5;
+}
+
+.card-custom-img {
+    height: 450px;
+    min-height: 450px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-color: inherit;
+}
+
+.card-text {
+    color: white;
+    font-weight: bold;
+    font-family: cursive;
+    text-align: center;
+}
+
+i {
+    font-size: 18px;
+    color: rebeccapurple;
+}
+
+span {
+    margin: 6px;
+    width: 100px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card-body h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+}
+
+.card-footer {
+    padding: 15px;
+    font-size: 16px;
+    font-family: 'Courgette', cursive;
+    text-align: center;
+}
