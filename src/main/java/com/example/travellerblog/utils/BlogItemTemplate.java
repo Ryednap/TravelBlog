@@ -1,15 +1,15 @@
 package com.example.travellerblog.utils;
 
-public class BlogItemClassUtil {
+public class BlogItemTemplate {
     private String id;
     private String userName;
 
-    public BlogItemClassUtil(String id, String userName) {
+    public BlogItemTemplate(String id, String userName) {
         this.id = id;
         this.userName = userName;
     }
 
-    public BlogItemClassUtil() {
+    public BlogItemTemplate() {
     }
 
     public String getId() {

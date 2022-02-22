@@ -1,5 +1,6 @@
 package com.example.travellerblog.utils;
 
+import com.example.travellerblog.model.Blog;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.data.util.Pair;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,21 +18,13 @@ public class BlogForm {
     private String dateString;
     private MultipartFile coverImage;
 
-    public BlogForm(String userName, String name, String description, LocalDate date, String dateString, MultipartFile coverImage) {
-        this.userName = userName;
-        this.name = name;
-        this.description = description;
-        this.date = date;
-        this.dateString = dateString;
-        this.coverImage = coverImage;
-    }
-
-    public BlogForm(String name, String description, String dateString, MultipartFile coverImage) {
-        this.name = name;
-        this.description = description;
-        this.date = LocalDate.parse(dateString, formatter);
-        this.dateString = dateString;
-        this.coverImage = coverImage;
+    public BlogForm(Blog blog) {
+        this.userName = blog.getUserName();
+        this.name = blog.getName();
+        this.description = blog.getDescription();
+        this.date = blog.getDate();
+        this.dateString = String.valueOf(blog.getDate());
+        this.coverImage = null;
     }
 
     public BlogForm() {
@@ -95,10 +88,6 @@ public class BlogForm {
 
     public void setCoverImage(MultipartFile coverImage) {
         this.coverImage = coverImage;
-    }
-
-    public DateTimeFormatter getFormatter() {
-        return formatter;
     }
 
     public String getUserName() {

@@ -25,16 +25,22 @@
     <div class="container">
         <div class="row pt-5">
             <div class="col-md-12 pb-3">
-                <div class="card card-custom border-0">
-                    <div class="card-custom-img" th:style="'background-image:url(' + @{/assets/img2.jpg} + ');'">
+                <!-- Blog Item Card -->
+                <div class="card card-custom border-0" th:object="${blogItem}">
+                    <!-- Cover Image file -->
+                    <div class="card-custom-img" th:style="'background-image:url(' + ${blogItem.coverImageLocation} + ');'">
                     </div>
+                    <!-- Card Body -->
                     <div class="card-body" style="overflow-y: auto">
                         <i class = "fas fa-calendar"></i>
-                        <span>22nd August 2022</span>
-                        <h2 class="card-text"> Saint Martin, California </h2>
+                        <!-- Travel Date of the blog -->
+                        <span th:text="${blogItem.date}"></span>
+                        <!-- Travel Name of the blog -->
+                        <h2 class="card-text" th:text="${blogItem.name}"></h2>
                     </div>
                     <div class="card-footer">
-                        <h5>Hello World this is Ujjwal Pandey, Let's get going</h5>
+                        <!-- Travel Description of the Blog -->
+                        <h5 th:text="${blogItem.description}"></h5>
                     </div>
                 </div>
             </div>

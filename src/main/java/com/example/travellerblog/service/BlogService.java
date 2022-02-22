@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BlogService {
@@ -31,6 +32,19 @@ public class BlogService {
                 imageStorageService.saveImage(form.getCoverImage())
         ));
     }
+    public void saveBlog(BlogForm form, String id) throws IOException {
+        System.out.println("Got Id : " + id);
+        Blog oldBlog = blogRepository.getById(Long.parseLong(id));
+        if (form.getName() != null) oldBlog.setName(form.getName());
+        if (form.getDate() != null) oldBlog.setDate(form.getDate());
+        if (form.getDescription() != null) oldBlog.setDescription(form.getDescription());
+        if (form.getCoverImage() != null) {
+            System.out.println("Cover Image name " + form.getCoverImage().getOriginalFilename());
+            oldBlog.setCoverImageLocation(imageStorageService.saveImage(form.getCoverImage()));
+        }
+
+        blogRepository.saveAndFlush(oldBlog);
+    }
 
     public List<Blog> getBlogList(String userName) {
         return blogRepository.findBlogByUserName(userName);
@@ -44,4 +58,10 @@ public class BlogService {
     public void deleteBlogItem(String Id) {
         blogRepository.deleteById(Long.parseLong(Id));
     }
+    public Blog getBlogItem(String Id) throws RuntimeException{
+        Optional<Blog> optionalBlog =  blogRepository.findById(Long.parseLong(Id));
+        if (optionalBlog.isEmpty()) throw new RuntimeException("Blog Not Found");
+        return optionalBlog.get();
+    }
+
 }
