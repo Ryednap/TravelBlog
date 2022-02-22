@@ -29,7 +29,6 @@ public class BlogController {
     }
 
 
-
     @PostMapping(value = "/form")
     public ModelAndView validateForm(@ModelAttribute("blog") BlogForm form, RedirectAttributes redirectAttributes) throws IOException {
         Pair<Integer, String> validationMessage = form.validateForm();
@@ -43,34 +42,19 @@ public class BlogController {
 
     @PostMapping(value = "/credentials")
     public ModelAndView validateCredentials(@RequestParam("user_name") String userName, RedirectAttributes redirectAttributes) {
-        List<Blog> blogItemList = blogService.getBlogList(userName);
-        redirectAttributes.addFlashAttribute("blogItemList", blogItemList);
+        redirectAttributes.addAttribute("userName", userName);
         return new ModelAndView("redirect:/blog/blogList");
     }
 
     @GetMapping(value = "/blogList")
-    public ModelAndView viewBlogList(Model model) {
-        return new ModelAndView("blogList").addObject("blogItemList", model.getAttribute("blogItemList"));
+    public ModelAndView viewBlogList(@RequestParam("userName") String userName) {
+        List<Blog> blogItemList = blogService.getBlogList(userName);
+        return new ModelAndView("blogList").addObject("blogItemList", blogItemList);
     }
 
     @GetMapping(value = "/images/{imgPath}")
     public ResponseEntity<byte[]> getImage(@PathVariable("imgPath") String imgPath) throws IOException {
         byte[] imageArrayBytes = blogService.loadImageFile(imgPath);
         return ResponseEntity.ok().contentType(MediaType.IMAGE_PNG).body(imageArrayBytes);
-    }
-
-    @GetMapping(value = "/blogItem")
-    public ModelAndView getBlogItem() {
-        return new ModelAndView("blogItem");
-    }
-
-    @GetMapping(value="/blog/blogEdit")
-    public ModelAndView getBlogEditPage () {
-        return new ModelAndView("blogItemEdit");
-    }
-
-    @DeleteMapping(value = "/blogItem")
-    public ModelAndView deleteBlogItem() {
-        return new ModelAndView("redirect:/blogList");
     }
 }

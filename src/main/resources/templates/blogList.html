@@ -41,7 +41,11 @@
                     <!-- Here Goes our View, Update, Delete button -->
                     <button class="btn shadow view" title="view"><i class="fas fa-eye"> </i></button>
                     <button class="btn shadow edit" title="edit"><i class="fas fa-pen-square"></i></button>
-                    <button class="btn shadow delete" title="delete"><i class="fas fa-skull-crossbones"></i></button>
+                    <form th:action="@{/blogItem/delete}" method="post" th:object="${blogItem_delete}">
+                        <input type="hidden" th:value="${blogItem.getId()}" name="id">
+                        <input type="hidden" th:value="${blogItem.getUserName()}" name="userName">
+                        <button class="btn shadow delete" title="delete"><i class="fas fa-skull-crossbones"></i></button>
+                    </form>
 
                     <!-- Here Goes our Date -->
                     <i class = "fas fa-calendar"></i>

@@ -40,4 +40,8 @@ public class BlogService {
         MultipartFile imgFile = imageStorageService.loadImage(imgPath, false);
         return imgFile.getBytes();
     }
+
+    public void deleteBlogItem(String Id) {
+        blogRepository.deleteById(Long.parseLong(Id));
+    }
 }
