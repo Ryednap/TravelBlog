@@ -32,11 +32,11 @@
 <body>
 <div class="container">
     <div class="row pt-5">
-        <!-- Item number one -->
-        <div class="col-md-6 pb-3">
+        <!-- Item -->
+        <div class="col-md-6 pb-3" th:each="blogItem: ${blogItemList}">
             <div class="card card-custom bg-white border-white border-0">
                 <!-- Here Goes Cover Image -->
-                <div class="card-custom-img" th:style="'background-image:url(' + @{/assets/img.jpg} + ');'"></div>
+                <div class="card-custom-img" th:style="'background-image:url(' +  ${blogItem.coverImageLocation} + ');'"></div>
                 <div class="card-body" style="overflow-y: auto">
                     <!-- Here Goes our View, Update, Delete button -->
                     <button class="btn shadow view" title="view"><i class="fas fa-eye"> </i></button>
@@ -45,28 +45,9 @@
 
                     <!-- Here Goes our Date -->
                     <i class = "fas fa-calendar"></i>
-                    <span>22nd August 2022</span>
+                    <span th:text="${blogItem.date}"></span>
                     <!-- Here Goes our Travel Name -->
-                    <h2 class="card-text">Saint Martin, California</h2>
-                </div>
-            </div>
-        </div>
-        <!-- Item number two -->
-        <div class="col-md-6 pb-3">
-            <div class="card card-custom bg-white border-white border-0">
-                <!-- Here Goes Cover Image -->
-                <div class="card-custom-img" th:style="'background-image:url(' + @{/assets/img2.jpg} + ');'"></div>
-                <div class="card-body" style="overflow-y: auto">
-                    <!-- Here Goes our View, Update, Delete button -->
-                    <button class="btn shadow view" title="view"><i class="fas fa-eye"> </i></button>
-                    <button class="btn shadow edit" title="edit"><i class="fas fa-pen-square"></i></button>
-                    <button class="btn shadow delete" title="delete"><i class="fas fa-skull-crossbones"></i></button>
-
-                    <!-- Here Goes our Date -->
-                    <i class = "fas fa-calendar"></i>
-                    <span>22nd August 2022</span>
-                    <!-- Here Goes our Travel Name -->
-                    <h2 class="card-text">Saint Martin, California</h2>
+                    <h2 class="card-text" th:text="${blogItem.name}"></h2>
                 </div>
             </div>
         </div>

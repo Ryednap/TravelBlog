@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.util.List;
 
 @Service
 public class BlogService {
@@ -22,10 +24,20 @@ public class BlogService {
 
     public void saveBlog(BlogForm form) throws IOException {
         blogRepository.saveAndFlush(new Blog(
+                form.getUserName(),
                 form.getName(),
                 form.getDate(),
                 form.getDescription(),
                 imageStorageService.saveImage(form.getCoverImage())
         ));
+    }
+
+    public List<Blog> getBlogList(String userName) {
+        return blogRepository.findBlogByUserName(userName);
+    }
+
+    public byte[] loadImageFile(String imgPath) throws IOException {
+        MultipartFile imgFile = imageStorageService.loadImage(imgPath, false);
+        return imgFile.getBytes();
     }
 }

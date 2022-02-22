@@ -10,11 +10,21 @@ import java.util.Objects;
 
 public class BlogForm {
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+    private String userName;
     private String name;
     private String description;
     private LocalDate date;
     private String dateString;
     private MultipartFile coverImage;
+
+    public BlogForm(String userName, String name, String description, LocalDate date, String dateString, MultipartFile coverImage) {
+        this.userName = userName;
+        this.name = name;
+        this.description = description;
+        this.date = date;
+        this.dateString = dateString;
+        this.coverImage = coverImage;
+    }
 
     public BlogForm(String name, String description, String dateString, MultipartFile coverImage) {
         this.name = name;
@@ -25,6 +35,7 @@ public class BlogForm {
     }
 
     public BlogForm() {
+        this.userName = "";
         this.name = "";
         this.description = "";
         this.dateString = "";
@@ -37,6 +48,7 @@ public class BlogForm {
         if (this.coverImage == null) return Pair.of(1, "Cover Image not supplied");
         if(this.name.length() > 100) return Pair.of(1, "Name Length exceeds 100 character limit");
         if (this.date.isAfter(LocalDate.now())) return Pair.of(1, "Date exceeds the Current Date");
+        if (this.coverImage == null) return Pair.of(1, "Image File not uploaded");
         if (!FilenameUtils.isExtension(this.coverImage.getOriginalFilename(),
                 "jpeg", "jpg", "png")) return Pair.of(1, "Cover Image doesn't match following types : JPEG/JPG/PNG");
         System.out.println("Size of the uploaded File: " + this.coverImage.getSize() * (9.5 * 1e-7));
@@ -85,6 +97,18 @@ public class BlogForm {
         this.coverImage = coverImage;
     }
 
+    public DateTimeFormatter getFormatter() {
+        return formatter;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -101,9 +125,13 @@ public class BlogForm {
     @Override
     public String toString() {
         return "BlogForm{" +
-                "name='" + name + '\'' +
+                "formatter=" + formatter +
+                ", userName='" + userName + '\'' +
+                ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", date=" + date +
+                ", dateString='" + dateString + '\'' +
+                ", coverImage=" + coverImage +
                 '}';
     }
 }

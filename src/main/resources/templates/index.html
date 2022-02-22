@@ -66,13 +66,18 @@
                         <h5 class="card-title text-center mb-5">Travel Blog</h5>
                         <!-- Blog Form -->
                         <form th:action="@{/blog/form}" th:object="${blog}" method="post" enctype="multipart/form-data">
+
+                            <div class="form-floating mb-3">
+                                <input th:field="*{userName}" type="text" class="form-control" id="userName" placeholder="name" required autofocus />
+                                <label for="userName"><i class="fa fa-user"></i>User Name</label>
+                            </div>
                             <div class="form-floating mb-3">
                                 <input th:field="*{name}" type="text" class="form-control" id="name" placeholder="Name" required autofocus />
                                 <label for="name"><i class="fa fa-user"></i>Name</label>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input th:field="*{dateString}" data-provide="datepicker" class="form-control" id="date" placeholder="Date" />
+                                <input autocomplete="false" th:field="*{dateString}" data-provide="datepicker" class="form-control" id="date" placeholder="Date" />
                                 <label for="date"><i class="fas fa-calendar"></i>Date</label>
                             </div>
 
