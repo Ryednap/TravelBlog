@@ -17,40 +17,46 @@ import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 /**
- * Represents Blog Form that is passed as object to thymeleaf for capturing the input fields.
+ * Represents Blog Form that is passed as object to thymeleaf for capturing the input fields in html form.
  * Provides a wrapper around Blog Model at View level
  */
 
 public class BlogForm {
     /**
      * Date String Formatter
-      */
+     */
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+
     /**
      * Name of the user who is posting the blog
      */
-
     private String userName;
+
     /**
      * Travel Blog Name
      */
     private String name;
+
     /**
      * Travel Blog description
       */
     private String description;
+
     /**
      * Date of Travel in Java LocalDate API
      */
     private LocalDate date;
+
     /**
      * Date of Travel in String Format
      */
     private String dateString;
+
     /**
      * Cover Image File from the form
      */
     private MultipartFile coverImage;
+
 
     /**
      * Copy Constructor to transfer the fields of Blog Model to Blog Form
@@ -65,6 +71,7 @@ public class BlogForm {
         this.coverImage = null;
     }
 
+
     /**
      * Default No-Args Constructor for initializing empty object to passed in thymeleaf template
      */
@@ -76,6 +83,7 @@ public class BlogForm {
         this.date = null;
         this.coverImage = null;
     }
+
 
     /**
      * Method to self validate the form and return respective status and message after validation
