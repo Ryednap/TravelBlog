@@ -56,7 +56,6 @@ public class BlogItemController {
     public ModelAndView updateBlogItem(@RequestParam("id") String itemId, @ModelAttribute("blogForm") BlogForm form,
                                        RedirectAttributes redirectAttributes) throws IOException {
 
-        System.out.println(form);
         blogService.saveBlog(form, itemId);
         redirectAttributes.addAttribute("userName", form.getUserName());
         return new ModelAndView("redirect:/blog/blogList");

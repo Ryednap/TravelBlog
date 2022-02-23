@@ -2,6 +2,7 @@ package com.example.travellerblog.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 @Entity
@@ -46,10 +47,6 @@ public class Blog {
         return Id;
     }
 
-    public void setId(Long id) {
-        Id = id;
-    }
-
     public String getUserName() {
         return userName;
     }
@@ -86,6 +83,10 @@ public class Blog {
         this.coverImageLocation = coverImageLocation;
     }
 
+    public String getFullDateString() {
+        DateTimeFormatter fullFormatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
+        return this.date.format(fullFormatter);
+    }
 
     @Override
     public boolean equals(Object o) {

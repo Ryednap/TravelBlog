@@ -3,18 +3,14 @@ package com.example.travellerblog.controller;
 import com.example.travellerblog.model.Blog;
 import com.example.travellerblog.service.BlogService;
 import com.example.travellerblog.utils.BlogForm;
-import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Pair;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.print.attribute.standard.Media;
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 

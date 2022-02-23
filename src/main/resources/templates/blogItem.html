@@ -34,7 +34,7 @@
                     <div class="card-body" style="overflow-y: auto">
                         <i class = "fas fa-calendar"></i>
                         <!-- Travel Date of the blog -->
-                        <span th:text="${blogItem.date}"></span>
+                        <span th:text="${blogItem.getFullDateString()}"></span>
                         <!-- Travel Name of the blog -->
                         <h2 class="card-text" th:text="${blogItem.name}"></h2>
                     </div>

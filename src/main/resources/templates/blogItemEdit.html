@@ -36,6 +36,7 @@
             <form th:action="@{/blogItem/update(id = ${id})}"  method="post" th:object="${blogForm}" autocomplete="off" enctype="multipart/form-data">
                 <!-- Your Name -->
                 <h3 th:text="'Hello '+ ${blogForm.userName}"></h3>
+                <input type="hidden" th:field="*{userName}">
                 <div class="form-row d-flex">
                     <div class="form-wrapper">
                         <label for="name">Name *</label>

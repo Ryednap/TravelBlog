@@ -27,6 +27,10 @@
             color: #666666;
             font-family: "Open Sans",serif;
         }
+
+        body {
+            background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+        }
     </style>
 </head>
 <body>
@@ -40,13 +44,13 @@
                 <div class="card-body" style="overflow-y: auto">
                     <!-- Here Goes our View, Update, Delete button Each Embedded in Hidden Form-->
 
-                    <!-- Edit Button -->
-                    <form th:action="@{/blogItem/edit}" method="get" th:object="${blogItemTemplate}">
+                    <!-- View Button -->
+                    <form th:action="@{/blogItem/view}" method="get" th:object="${blogItemTemplate}">
                         <input type="hidden" th:value="${blogItem.getId()}" name="id">
                         <button class="btn shadow view" title="view"><i class="fas fa-eye"> </i></button>
                     </form>
-                    <!-- View Button -->
-                    <form th:action="@{/blogItem/view}" method="get" th:object="${blogItemTemplate}">
+                    <!-- Edit Button -->
+                    <form th:action="@{/blogItem/edit}" method="get" th:object="${blogItemTemplate}">
                         <input type="hidden" th:value="${blogItem.getId()}" name="id">
                         <button class="btn shadow edit" title="edit"><i class="fas fa-pen-square"></i></button>
                     </form>
@@ -59,7 +63,7 @@
 
                     <!-- Here Goes our Date -->
                     <i class = "fas fa-calendar"></i>
-                    <span th:text="${blogItem.date}"></span>
+                    <span th:text="${blogItem.getFullDateString()}"></span>
                     <!-- Here Goes our Travel Name -->
                     <h2 class="card-text" th:text="${blogItem.name}"></h2>
                 </div>

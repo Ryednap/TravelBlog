@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
@@ -38,8 +37,7 @@ public class BlogService {
         if (form.getName() != null) oldBlog.setName(form.getName());
         if (form.getDate() != null) oldBlog.setDate(form.getDate());
         if (form.getDescription() != null) oldBlog.setDescription(form.getDescription());
-        if (form.getCoverImage() != null) {
-            System.out.println("Cover Image name " + form.getCoverImage().getOriginalFilename());
+        if (form.getCoverImage() != null && form.getCoverImage().getSize() > 0) {
             oldBlog.setCoverImageLocation(imageStorageService.saveImage(form.getCoverImage()));
         }
 
