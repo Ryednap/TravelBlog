@@ -24,11 +24,11 @@ import java.util.Objects;
 
 
 /**
- * Implementation of ImageStorageService interface as service bean which is used by BlogService to deal with
+ * Implementation of {@link ImageStorageService} interface as service bean which is used by BlogService to deal with
  * CRUD operation relating to cover Image file
  *
  * @see com.example.travellerblog.service.ImageStorageService
- * @see com.example.travellerblog.service.BlogService
+ * @see BlogServiceImpl
  */
 
 @Service

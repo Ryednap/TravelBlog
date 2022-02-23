@@ -18,7 +18,7 @@ import java.util.Objects;
 
 /**
  * Represents Blog Form that is passed as object to thymeleaf for capturing the input fields in html form.
- * Provides a wrapper around Blog Model at View level
+ * Provides a wrapper around {@link Blog} Model at View level
  */
 
 public class BlogForm {
@@ -59,7 +59,7 @@ public class BlogForm {
 
 
     /**
-     * Copy Constructor to transfer the fields of Blog Model to Blog Form
+     * Copy Constructor to transfer the fields of @{link {@link Blog}} model to Blog Form
      * @param blog blog model
      */
     public BlogForm(Blog blog) {

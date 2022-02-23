@@ -19,7 +19,7 @@ public interface ImageStorageService {
 
     /**
      * Init method used for Initializing bean which will be implementing this interface
-     * This initialization can be anything from directory creation variable initialization
+     * This initialization can be anything from directory creation to variable initialization
      *
      * @throws IOException when Initialization related to files and directory is performed
      */
