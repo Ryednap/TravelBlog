@@ -1,4 +1,4 @@
-package com.example.travellerblog.serviceTests;
+package com.example.travellerblog;
 
 
 import com.example.travellerblog.service.ImageStorageService;

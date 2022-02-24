@@ -55,9 +55,13 @@ MVC (Model-View-Controller) architecture.
  ┗ 📂test
  ┃ ┗ 📂java
  ┃ ┃ ┗ 📂com.example.travellerblog
- ┃ ┃ ┣ 📂serviceTests
- ┃ ┃ ┃ ┗ 📜ImageStorageServiceTests.java
- ┃ ┃ ┃
- ┃ ┃ ┗ 📜TravellerBlogApplicationTests.java          
+ ┃ ┃   ┣ 📜ImageStorageServiceTests.java
+ ┃ ┃   ┗ 📜TravellerBlogApplicationTests.java          
 
 ```
+
+## Building this Project
+
+* On Linux based distros
+  * install maven ``sudo apt get install maven``
+  * 
