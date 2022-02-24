@@ -113,7 +113,7 @@ public class ImageStorageServiceImpl implements ImageStorageService{
      * @throws IOException
      */
     @Override
-    public void delete(String imgName) throws IOException {
-        Files.delete(this.imageDir.resolve(imgName));
+    public void delete(String imgName, boolean fullPath) throws IOException {
+        Files.delete(fullPath ? Path.of(imgName) : this.imageDir.resolve(imgName));
     }
 }

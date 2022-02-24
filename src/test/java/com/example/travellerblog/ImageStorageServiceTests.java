@@ -56,7 +56,7 @@ public class ImageStorageServiceTests {
 
     @Test
     public void testCDeleteImage() throws IOException {
-        imageStorageService.delete("testImage.png");
+        imageStorageService.delete("testImage.png", false);
         assert (!new File("images/testImage.png").exists());
     }
 }

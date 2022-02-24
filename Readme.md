@@ -4,6 +4,13 @@
 <div style="padding:10px;font-family: 'Montserrat', sans-serif;">
 Web Application developed using <span style="font-family: cursive; font-weight: 500; font-style: italic">Java Spring framework, Hibernate, MYSQL, Thymeleaf and HTML </span>. The Application design pattern follows 
 MVC (Model-View-Controller) architecture. 
+
+To view the demonstration video on using this website refer ![video](https://drive.google.com/file/d/1MrAKUD5_BVbIv5VhjS3wNYh4vcC06yZI/view?usp=sharing)
+The database after demonstration is as follows
+
+<div>
+    <img src="docs/database.png" height="800px" width="450px" alt="database">
+</div>
 </div>
 
 ## Directory structure

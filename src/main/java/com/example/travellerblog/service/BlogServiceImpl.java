@@ -77,7 +77,7 @@ public class BlogServiceImpl implements BlogService {
         if (form.getCoverImage() != null && form.getCoverImage().getSize() > 0) {
 
             // Delete the old_image
-            imageStorageService.delete(oldBlog.getCoverImageLocation());
+            imageStorageService.delete(oldBlog.getCoverImageLocation(), true);
             // update to the new_image
             oldBlog.setCoverImageLocation(imageStorageService.saveImage(form.getCoverImage()));
         }

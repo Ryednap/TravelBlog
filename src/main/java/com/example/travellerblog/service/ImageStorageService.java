@@ -54,7 +54,8 @@ public interface ImageStorageService {
      * Method that deletes the file from the path which is provided in args. the path is request to absolute the web-application
      *
      * @param imgPath String: Path of the image File where file is located
+     * @param fullPath Boolean: represents whether the provided {imgPath} is relative or full path
      * @throws IOException if prescribed operation fails
      */
-    void delete(String imgPath) throws IOException;
+    void delete(String imgPath, boolean fullPath) throws IOException;
 }
