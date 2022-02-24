@@ -114,3 +114,17 @@ The Blog List page contains card layout with each card dedicated to individual b
 
 ![Blog List Page](https://github.com/Ryednap/TravelBlog/blob/main/docs/blogList.gif)
 
+### View Page
+
+On clicking **view*** button the view page for that blog Item is opened.
+
+![View Page](https://github.com/Ryednap/TravelBlog/blob/main/docs/viewPage.gif)
+
+
+### Edit Page
+
+On clicking **edit** button we are taken to the Edit Page, where a small form with old field data is present. The cover image
+is present as background and on changing file the background also changes to reflect the same.
+
+[!Edit Page](https://github.com/Ryednap/TravelBlog/blob/main/docs/editPage.gif)
+[!Edit Page Image Change](https://github.com/Ryednap/TravelBlog/blob/main/docs/editPage_imageChange.gif)
