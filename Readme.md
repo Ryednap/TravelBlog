@@ -98,7 +98,13 @@ The index or the home page of the website has a travel blog form with following 
 * **Name** Travel Name you want to dedicated this blog to
 * **Date** Travel Date
 * **Description** Description related to the blog
-* **Cover Image** Image file you want to associate this blog to.
+* **Cover Image** Image file you want to associate this blog to (Only supports JPEG/PNG/JPG)
+
+#### validation popup
+<div style="padding: 5px">
+    <img src="./docs/failed_sub1.png.png" width="300px" height="150px" alt="indexPage">
+<img src="./docs/failed_sub2.png.png" width="300px" height="150px" alt="indexPage">
+</div>
 
 After submitting the form based on validation message we will get popup notifying if there was error or was successful.
 
@@ -127,4 +133,13 @@ On clicking **edit** button we are taken to the Edit Page, where a small form wi
 is present as background and on changing file the background also changes to reflect the same.
 
 ![Edit Page](https://github.com/Ryednap/TravelBlog/blob/main/docs/editPage.gif)
+
+#### Edit page Background Image change
 ![Edit Image Change](https://github.com/Ryednap/TravelBlog/blob/main/docs/editPage_imageChange.gif)
+
+
+## Deletion Feature
+
+On clicking delete button the card is removed from the list
+
+[!Delete](https://github.com/Ryednap/TravelBlog/blob/main/docs/delete.gif)
