@@ -20,7 +20,6 @@ import java.util.Objects;
  * Represents Blog Form that is passed as object to thymeleaf for capturing the input fields in html form.
  * Provides a wrapper around {@link Blog} Model at View level
  */
-
 public class BlogForm {
     /**
      * Date String Formatter
@@ -60,6 +59,7 @@ public class BlogForm {
 
     /**
      * Copy Constructor to transfer the fields of @{link {@link Blog}} model to Blog Form
+     *
      * @param blog blog model
      */
     public BlogForm(Blog blog) {
@@ -88,13 +88,13 @@ public class BlogForm {
     /**
      * Method to self validate the form and return respective status and message after validation
      * {
-     *     status 0 : Although not present here, but we pass it to thymeleaf template indicating that form is empty
-     *     status 1 : Error in validation
-     *     status 2 : Ok
+     * status 0 : Although not present here, but we pass it to thymeleaf template indicating that form is empty
+     * status 1 : Error in validation
+     * status 2 : Ok
      * }
+     *
      * @return Pair defining the (status, message) after form validation
      */
-
     public Pair<Integer, String> validateForm () {
 
         // date is empty
@@ -117,39 +117,84 @@ public class BlogForm {
     }
 
 
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Gets description.
+     *
+     * @return the description
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Gets date.
+     *
+     * @return the date
+     */
     public LocalDate getDate() {
         return date;
     }
 
+    /**
+     * Gets cover image.
+     *
+     * @return the cover image
+     */
     public MultipartFile getCoverImage() {
         return coverImage;
     }
 
+    /**
+     * Gets date string.
+     *
+     * @return the date string
+     */
     public String getDateString() {
         return dateString;
     }
 
+    /**
+     * Gets full date string.
+     *
+     * @return the full date string
+     */
     public String getFullDateString() {
         DateTimeFormatter fullFormatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
         return this.date.format(fullFormatter);
     }
 
+    /**
+     * Sets name.
+     *
+     * @param name the name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Sets description.
+     *
+     * @param description the description
+     */
     public void setDescription(String description) {
         this.description = description;
     }
 
+    /**
+     * Sets date string.
+     *
+     * @param dateString the date string
+     */
     public void setDateString(String dateString) {
         this.dateString = dateString;
         setDate(LocalDate.parse(dateString, formatter));

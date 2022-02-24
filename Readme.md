@@ -60,8 +60,32 @@ MVC (Model-View-Controller) architecture.
 
 ```
 
+## Module Info
+
+This spring application is dependent on following module.
+
+``` java
+    module TravellerBlog {
+
+        requires java.persistence;
+        requires commons.fileupload;
+        requires org.apache.commons.io;
+        requires spring.beans;
+        requires spring.boot.autoconfigure;
+        requires spring.boot.devtools;
+        requires spring.context;
+        requires spring.data.commons;
+        requires spring.data.jpa;
+        requires spring.web;
+        requires spring.webmvc;
+}
+```
+
 ## Building this Project
 
-* On Linux based distros
-  * install maven ``sudo apt get install maven``
-  * 
+Simply clone this project, then open the project in your favourite IDE,
+the maven building of the project will be automatically done by the IDE.
+
+## Output and Features
+
+![alt text](https://drive.google.com/file/d/1mfJpp7BfIjQ2AniKyHzR4TEXEMx2sQyc/view?usp=sharing)
