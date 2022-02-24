@@ -102,8 +102,8 @@ The index or the home page of the website has a travel blog form with following 
 
 #### validation popup
 <div style="padding: 5px">
-    <img src="./docs/failed_sub1.png.png" width="300px" height="150px" alt="indexPage">
-<img src="./docs/failed_sub2.png.png" width="300px" height="150px" alt="indexPage">
+    <img src="./docs/failed_sub1.png" width="300px" height="150px" alt="indexPage">
+<img src="./docs/failed_sub2.png" width="300px" height="150px" alt="indexPage">
 </div>
 
 After submitting the form based on validation message we will get popup notifying if there was error or was successful.
