@@ -101,5 +101,16 @@ The index or the home page of the website has a travel blog form with following 
 * **Cover Image** Image file you want to associate this blog to.
 
 After submitting the form based on validation message we will get popup notifying if there was error or was successful.
+
 ![index Page](https://github.com/Ryednap/TravelBlog/blob/main/docs/indexPage.gif)
+
+### Blog List Page
+
+If one wishes to view the blog saved by the respective user, click on ***View Blogs** buttons and enter the ***User Name** and this will
+take you to the blog list page.
+
+The Blog List page contains card layout with each card dedicated to individual blog item. Each card on top right corner has
+***view**, ***edit** and ***delete** button.
+
+![Blog List Page](https://github.com/Ryednap/TravelBlog/blob/main/docs/blogList.gif)
 
