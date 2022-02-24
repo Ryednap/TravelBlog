@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -73,6 +75,10 @@ public class BlogServiceImpl implements BlogService {
         if (form.getDate() != null) oldBlog.setDate(form.getDate());
         if (form.getDescription() != null) oldBlog.setDescription(form.getDescription());
         if (form.getCoverImage() != null && form.getCoverImage().getSize() > 0) {
+
+            // Delete the old_image
+            imageStorageService.delete(oldBlog.getCoverImageLocation());
+            // update to the new_image
             oldBlog.setCoverImageLocation(imageStorageService.saveImage(form.getCoverImage()));
         }
 
@@ -81,14 +87,18 @@ public class BlogServiceImpl implements BlogService {
 
 
     /**
-     *
      * {@inheritDoc}
+     * <p>
+     *     Returns the sorted List of {@link Blog} items by date in ascending order
+     * </p>
      * @param userName Name of the user from whose blog needs to be retrieved
      * @return List of blog Items
      */
     @Override
     public List<Blog> getBlogList(String userName) {
-        return blogRepository.findBlogByUserName(userName);
+        List<Blog> blogByUserName = blogRepository.findBlogByUserName(userName);
+        blogByUserName.sort(Comparator.comparing(Blog::getDate));
+        return blogByUserName;
     }
 
 
