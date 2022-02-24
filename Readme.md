@@ -88,4 +88,13 @@ the maven building of the project will be automatically done by the IDE.
 
 ## Output and Features
 
-![alt text](https://drive.google.com/file/d/1mfJpp7BfIjQ2AniKyHzR4TEXEMx2sQyc/view?usp=sharing)
+### Index Page
+
+The index or the home page of the website has a travel blog form with following fields
+* **User Name:** Name of the user to whom the blog belongs ****(max 100 characters)****; later using this name we can access all the blog belonging to this person.
+* **Name** Travel Name you want to dedicated this blog to
+* **Date** Travel Date
+* **Description** Description related to the blog
+* **Cover Image** Image file you want to associate this blog to.
+
+![index Page](https://drive.google.com/uc?export=view&id=1mfJpp7BfIjQ2AniKyHzR4TEXEMx2sQyc)
