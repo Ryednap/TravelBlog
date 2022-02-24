@@ -142,4 +142,4 @@ is present as background and on changing file the background also changes to ref
 
 On clicking delete button the card is removed from the list
 
-[!Delete](https://github.com/Ryednap/TravelBlog/blob/main/docs/delete.gif)
+![Delete](https://github.com/Ryednap/TravelBlog/blob/main/docs/delete.gif)
