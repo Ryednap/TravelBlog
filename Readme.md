@@ -97,4 +97,4 @@ The index or the home page of the website has a travel blog form with following 
 * **Description** Description related to the blog
 * **Cover Image** Image file you want to associate this blog to.
 
-![index Page](https://github.com/Ryednap/TravelBlog/blob/master/docs/indexPage.gif)
+![index Page](https://github.com/Ryednap/TravelBlog/blob/main/docs/indexPage.gif)
