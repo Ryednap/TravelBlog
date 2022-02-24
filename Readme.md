@@ -89,6 +89,9 @@ the maven building of the project will be automatically done by the IDE.
 ## Output and Features
 
 ### Index Page
+<div>
+    <img src="./docs/indexPage.png" width="300px" height="150px" alt="indexPage">
+</div>
 
 The index or the home page of the website has a travel blog form with following fields
 * **User Name:** Name of the user to whom the blog belongs ****(max 100 characters)****; later using this name we can access all the blog belonging to this person.
@@ -99,4 +102,4 @@ The index or the home page of the website has a travel blog form with following 
 
 After submitting the form based on validation message we will get popup notifying if there was error or was successful.
 ![index Page](https://github.com/Ryednap/TravelBlog/blob/main/docs/indexPage.gif)
-<img src="./docs/indexPage.png" width="300px" height="150px">
+
