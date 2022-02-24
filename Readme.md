@@ -97,4 +97,6 @@ The index or the home page of the website has a travel blog form with following 
 * **Description** Description related to the blog
 * **Cover Image** Image file you want to associate this blog to.
 
+After submitting the form based on validation message we will get popup notifying if there was error or was successful.
 ![index Page](https://github.com/Ryednap/TravelBlog/blob/main/docs/indexPage.gif)
+<img src="./docs/indexPage.png" width="300px" height="150px">
