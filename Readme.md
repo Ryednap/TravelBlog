@@ -126,4 +126,4 @@ On clicking **view*** button the view page for that blog Item is opened.
 On clicking **edit** button we are taken to the Edit Page, where a small form with old field data is present. The cover image
 is present as background and on changing file the background also changes to reflect the same.
 
-[!Edit](https://github.com/Ryednap/TravelBlog/blob/main/docs/editPage_imageChange.gif)
+[!Edit](https://github.com/Ryednap/TravelBlog/blob/main/docs/editPage.gif)
