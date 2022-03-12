@@ -91,7 +91,7 @@ This spring application is dependent on following module.
 ## Building this Project
 
 Simply clone this project, then open the project in your favourite IDE,
-the maven building of the project will be automatically done by the IDE.
+the maven building of the project will be automatically done by the IDE. After opening in your IDE configure ```resources/application.properties``` to configure local MYSQL url in database url and then we are ready to run the project in our local system.
 
 ## Output and Features
 
