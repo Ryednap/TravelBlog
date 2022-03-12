@@ -6,7 +6,8 @@ Web Application developed using <span style="font-family: cursive; font-weight: 
 MVC (Model-View-Controller) architecture. 
 
 To view the demonstration video on using this website refer:  [DEMO](https://drive.google.com/file/d/1MrAKUD5_BVbIv5VhjS3wNYh4vcC06yZI/view?usp=sharing)
-The database after demonstration is as follows
+
+    The database after demonstration is as follows
 
 <div>
     <img src="docs/database.png" width="800px" height="450px" alt="database">
